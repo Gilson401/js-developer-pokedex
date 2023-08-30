@@ -7,8 +7,12 @@ body {
     background-color: #f6f8fc;
 }
 
+
+.display-none {
+    display: none;
+}
+
 .content {
-    width: 100vw;
     height: 100vh;
     padding: 1rem;
     background-color: #fff;
@@ -21,4 +25,8 @@ body {
         margin: 1rem auto;
         border-radius: 1rem;
     }
+}
+
+button:disabled {
+    cursor: not-allowed;
 }

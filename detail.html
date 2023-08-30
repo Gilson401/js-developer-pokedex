@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Detail</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+ 
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="/assets/css/details.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body class="">
+
+    <section id="detailSection" class="content detail ">
+
+        <div class="content-top">
+            <nav>
+                <a href="index.html">
+
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </a>
+                <span class="material-symbols-outlined">
+                    favorite
+                </span>
+            </nav>
+
+            <h1 id="title"></h1>
+            <div id="id"></div>
+
+            <ul id="detailTypes" class="types">
+            </ul>
+        </div>
+
+
+        <img id="pokemonPhoto" src="" alt="" />
+        <div class="detail-sheet">
+            <div class="tab">
+                <button class="tablinks active" onclick="activateTab(event, 'About')">About</button>
+                <button class="tablinks " onclick="activateTab(event, 'BaseStats')">Base Stats</button>
+                <button class="tablinks" onclick="activateTab(event, 'Evolution')">Evolution</button>
+                <button class="tablinks" onclick="activateTab(event, 'Moves')">Moves</button>
+            </div>
+
+            <div id="About" class="tabcontent active">
+                <table>
+                    <tr>
+                        <td>Species</td>
+                        <td id="species"></td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td id="height"></td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td id="weight"></td>
+                    </tr>
+                    <tr>
+                        <td>Abilities</td>
+                        <td id="abilities"></td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Breedings</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td id="gender">
+                            <span id="genderMaleLabel"></span>
+                            <span id="genderMale" class="material-symbols-outlined">
+                                male
+                            </span>
+
+                            <span id="genderFemaleLabel"></span>
+                            <span id="genderFemale" class="material-symbols-outlined">
+                                female
+                            </span>
+
+                            <span id="genderOtherLabel"></span>
+                            <span id="genderOther" class="material-symbols-outlined">
+                                transgender
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Egg Groups</td>
+                        <td id="eggGroups"></td>
+                    </tr>
+                    <tr>
+                        <td>Egg Cycle</td>
+                        <td id="eggCycle"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div id="BaseStats" class="tabcontent">
+                <table id="baseStatsTable">
+                </table>
+            </div>
+
+            <div id="Evolution" class="tabcontent">
+                <h3>NOT DISPONIBLE Evolution</h3>
+            </div>
+
+            <div id="Moves" class="tabcontent">
+                <h3>NOT DISPONIBLE  Moves</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="/assets/js/helpers.js"></script>
+    <script src="/assets/js/pokemon-model.js"></script>
+    <script src="/assets/js/poke-api.js"></script>
+    <script src="/assets/js/details.js"></script>
+
+</body>
+
+</html>

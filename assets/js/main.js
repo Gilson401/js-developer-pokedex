@@ -1,5 +1,7 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
+const loadingIcon = document.getElementById('loadingIcon')
+const loadingLabel = document.getElementById('loadingLabel')
 
 const maxRecords = 151
 const limit = 10
@@ -7,7 +9,9 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li >
+
+            <a href="/detail.html?name=${pokemon.name}&id=${pokemon.number}" class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -19,14 +23,25 @@ function convertPokemonToLi(pokemon) {
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
+            </a>
         </li>
     `
 }
 
+
+
 function loadPokemonItens(offset, limit) {
+
+    loadingIcon.classList.remove('display-none')
+    loadingLabel.classList.add('display-none')
+    loadMoreButton.setAttribute('disabled', 'true')
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
         pokemonList.innerHTML += newHtml
+
+        loadingIcon.classList.add('display-none')
+        loadingLabel.classList.remove('display-none')
+        loadMoreButton.removeAttribute('disabled')
     })
 }
 
